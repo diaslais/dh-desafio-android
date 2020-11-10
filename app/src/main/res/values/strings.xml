@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">desafio</string>
+    <string name="page_title">Digital House Foods</string>
+    <string name="label_email">Email</string>
+    <string name="label_password">Password</string>
+    <string name="btn_log_in">Log In</string>
+    <string name="btn_register">Register</string>
+</resources>
