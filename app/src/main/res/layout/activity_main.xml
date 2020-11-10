@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp">
         <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/topAppBar"
+            android:id="@+id/loginTopAppBar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:title="@string/page_title"
@@ -21,31 +21,33 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/txtLayoutEmail"
+        android:id="@+id/loginTxtLayoutEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/label_email"
         android:paddingHorizontal="20dp">
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/loginTxtEdtEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/txtLayoutPassword"
+        android:id="@+id/loginTxtLayoutPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/label_password"
         android:paddingHorizontal="20dp">
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/loginTxtEdtPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/btnLogIn"
+        android:id="@+id/loginBtnLogIn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/btn_log_in"
@@ -80,7 +82,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btnRegister"
+        android:id="@+id/loginBtnRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/btn_register"

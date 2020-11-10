@@ -5,4 +5,7 @@
     <string name="label_password">Password</string>
     <string name="btn_log_in">Log In</string>
     <string name="btn_register">Register</string>
+    <string name="page_register">Register</string>
+    <string name="label_name">Name</string>
+    <string name="label_repeat">Repeat Password</string>
 </resources>
