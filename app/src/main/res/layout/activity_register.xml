@@ -31,7 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/label_name"
-            android:paddingHorizontal="20dp">
+            android:paddingHorizontal="15dp">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/registerTxtEdtName"
                 android:layout_width="match_parent"
@@ -44,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/label_email"
-            android:paddingHorizontal="20dp">
+            android:paddingHorizontal="15dp">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/registerTxtEdtEmail"
                 android:layout_width="match_parent"
@@ -57,7 +57,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/label_password"
-            android:paddingHorizontal="20dp">
+            android:paddingHorizontal="15dp">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/registerTxtEdtPassword"
                 android:layout_width="match_parent"
@@ -70,7 +70,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/label_repeat"
-            android:paddingHorizontal="20dp">
+            android:paddingHorizontal="15dp">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/registerTxtEdtRepeat"
                 android:layout_width="match_parent"
@@ -84,7 +84,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/btn_register"
-        android:layout_marginHorizontal="20dp"
+        android:layout_marginHorizontal="15dp"
         android:paddingVertical="15dp"
         android:layout_marginBottom="40dp"
         />
