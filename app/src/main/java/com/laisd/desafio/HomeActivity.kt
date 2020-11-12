@@ -2,10 +2,11 @@ package com.laisd.desafio
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity(), HomeRecyclerviewAdapter. IRestaurantItemClick{
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
@@ -20,12 +21,15 @@ class HomeActivity : AppCompatActivity() {
             Restaurante(R.drawable.sisenor, "Sí Señor!", "Alameda Jauaperi, 626 - Moema", "Fecha às 01:00")
         )
 
-        val homeViewAdapter = HomeRecyclerviewAdapter(homeRestaurantesDataSet)
+        val homeViewAdapter = HomeRecyclerviewAdapter(homeRestaurantesDataSet, this)
 
         homeRecyclerView.apply {
             layoutManager = homeViewManager
             adapter = homeViewAdapter
         }
+    }
 
+    override fun onRestaurantClick(dataSet: Restaurante, position: Int) {
+        Toast.makeText(this, dataSet.nome, Toast.LENGTH_LONG).show()
     }
 }
