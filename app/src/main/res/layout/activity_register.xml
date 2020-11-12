@@ -35,6 +35,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/registerTxtEdtName"
                 android:layout_width="match_parent"
+                android:backgroundTint="@color/colorWhite"
                 android:layout_height="wrap_content"
                 android:inputType="text"/>
         </com.google.android.material.textfield.TextInputLayout>
@@ -49,6 +50,7 @@
                 android:id="@+id/registerTxtEdtEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorWhite"
                 android:inputType="textEmailAddress"/>
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -62,6 +64,7 @@
                 android:id="@+id/registerTxtEdtPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorWhite"
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -75,16 +78,18 @@
                 android:id="@+id/registerTxtEdtRepeat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorWhite"
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
 
     <Button
-        android:id="@+id/registerBtnLogIn"
+        android:id="@+id/registerBtnRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/btn_register"
         android:layout_marginHorizontal="15dp"
+        android:backgroundTint="@color/colorOrange"
         android:paddingVertical="15dp"
         android:layout_marginBottom="40dp"
         />
