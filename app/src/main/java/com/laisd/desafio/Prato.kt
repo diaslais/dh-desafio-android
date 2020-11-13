@@ -1,8 +1,7 @@
 package com.laisd.desafio
 
-class Prato(
+data class Prato(
     val foto: Int,
-    val nome: String
-) {
-    val descricao: String = ""
-}
+    val nome: String,
+    val descricao: String
+)
