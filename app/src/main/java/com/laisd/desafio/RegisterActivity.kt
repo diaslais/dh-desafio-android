@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.Button
+import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 
@@ -102,11 +103,10 @@ class RegisterActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         }
+
+        val topAppBar = findViewById<MaterialToolbar>(R.id.registerTopAppBar)
+        topAppBar.setNavigationOnClickListener {
+            finish()
+        }
     }
-
-//    topAppBar.setNavigationOnClickListener {
-//        // Handle navigation icon press
-//    }
-
-
 }
