@@ -16,4 +16,6 @@
     <string name="home_horario">Fecha às 22:00</string>
     <string name="title">"Salada com molho Gengibre "</string>
     <string name="content_description_media">"Salada com molho Gengibre "</string>
+    <string name="salada_com_molho_gengibre">Salada com molho Gengibre</string>
+    <string name="sed_ut_perspiciatis_unde_omnis_iste_natus_error_sit_voluptatem_accusant_doloremque_laudantium_totam_rem_aperiam_eaque_ipsa_quae_ab_illo_inventore_veritatis">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusant doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis.</string>
 </resources>

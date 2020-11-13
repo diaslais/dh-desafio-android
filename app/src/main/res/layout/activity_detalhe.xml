@@ -15,7 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="275dp"
             android:src="@drawable/tonysroma"
-            android:scaleType="fitStart" />
+            android:scaleType="centerCrop" />
         <Button
             android:id="@+id/detalheBtnBack"
             android:layout_width="wrap_content"
@@ -29,7 +29,7 @@
             android:layout_gravity="bottom"
             android:fontFamily="@font/roboto_medium"
             android:paddingHorizontal="15dp"
-            android:text="Salada com molho Gengibre"
+            android:text="@string/salada_com_molho_gengibre"
             android:textColor="#fff"
             android:textSize="28sp"
             android:layout_marginBottom="5dp"/>
@@ -39,12 +39,10 @@
         android:id="@+id/txtDescricaoPrato"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusant doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis."
+        android:text="@string/sed_ut_perspiciatis_unde_omnis_iste_natus_error_sit_voluptatem_accusant_doloremque_laudantium_totam_rem_aperiam_eaque_ipsa_quae_ab_illo_inventore_veritatis"
         android:justificationMode="inter_word"
         android:fontFamily="@font/roboto"
         android:paddingHorizontal="15dp"
         android:layout_marginTop="20dp"/>
-
-
 
 </LinearLayout>
