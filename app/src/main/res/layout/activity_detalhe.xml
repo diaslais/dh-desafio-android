@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <ImageView
+            android:id="@+id/imgFotoDoPrato"
             android:layout_width="wrap_content"
             android:layout_height="275dp"
             android:src="@drawable/tonysroma"
@@ -22,6 +23,7 @@
             android:background="@color/colorTransparent"
             app:icon="@drawable/ic_baseline_keyboard_backspace_24" />
         <TextView
+            android:id="@+id/txtNomePrato"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
@@ -34,6 +36,7 @@
     </FrameLayout>
 
     <TextView
+        android:id="@+id/txtDescricaoPrato"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusant doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis."
