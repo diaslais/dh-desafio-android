@@ -8,7 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class PratosRecyclerviewAdapter (private val pratosDataSet: List<Prato>, var clickListener: ICardapioItemClick): RecyclerView.Adapter<PratosRecyclerviewAdapter.PratosViewHolder>() {
+class PratosRecyclerviewAdapter (private val pratosDataSet: ArrayList<Prato>, var clickListener: ICardapioItemClick): RecyclerView.Adapter<PratosRecyclerviewAdapter.PratosViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PratosViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_prato_recyclerview, parent, false)

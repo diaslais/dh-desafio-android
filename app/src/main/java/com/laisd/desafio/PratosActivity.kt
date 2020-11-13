@@ -14,6 +14,7 @@ class PratosActivity : AppCompatActivity(), PratosRecyclerviewAdapter.ICardapioI
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pratos)
 
+        val pratosRecyclerView = findViewById<RecyclerView>(R.id.pratosRecyclerView)
         val pratosNome = findViewById<TextView>(R.id.txtNomeRestaurante)
         val pratosFoto = findViewById<ImageView>(R.id.imgFotoRestaurante)
         val backButton = findViewById<Button>(R.id.pratosBtnBack)
@@ -26,22 +27,9 @@ class PratosActivity : AppCompatActivity(), PratosRecyclerviewAdapter.ICardapioI
         }
 
         val pratosViewManager = GridLayoutManager(this, 2)
-        val pratosRecyclerView = findViewById<RecyclerView>(R.id.pratosRecyclerView)
 
-        val pratosDataSet = arrayListOf<Prato>(
-            Prato(R.drawable.tonysroma, "Salada", "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusant doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis."),
-            Prato(R.drawable.tonysroma, "Salada com molho Gengibre", "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusant doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis."),
-            Prato(R.drawable.tonysroma, "Salada com molho Gengibre", "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusant doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis."),
-            Prato(R.drawable.tonysroma, "Salada com molho Gengibre", "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusant doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis."),
-            Prato(R.drawable.tonysroma, "Salada com molho Gengibre", "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusant doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis."),
-            Prato(R.drawable.tonysroma, "Salada com molho Gengibre", "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusant doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis."),
-            Prato(R.drawable.tonysroma, "Salada com molho Gengibre", "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusant doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis."),
-            Prato(R.drawable.tonysroma, "Salada com molho Gengibre", "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusant doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis."),
-            Prato(R.drawable.tonysroma, "Salada com molho Gengibre", "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusant doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis."),
-            Prato(R.drawable.tonysroma, "Salada com molho Gengibre", "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusant doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis.")
-        )
-
-        val pratosViewAdapter = PratosRecyclerviewAdapter(pratosDataSet, this)
+        val listaDePratos = intent.getParcelableArrayListExtra<Prato>("RESTAURANTECARDAPIO")
+        val pratosViewAdapter = PratosRecyclerviewAdapter(listaDePratos as ArrayList<Prato>, this)
 
         pratosRecyclerView.apply {
             layoutManager = pratosViewManager
