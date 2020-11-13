@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class PratosActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,6 +22,29 @@ class PratosActivity : AppCompatActivity() {
 
         backButton.setOnClickListener {
             finish()
+        }
+
+        val pratosViewManager = GridLayoutManager(this, 2)
+        val pratosRecyclerView = findViewById<RecyclerView>(R.id.pratosRecyclerView)
+
+        val pratosDataSet = arrayListOf<Prato>(
+            Prato(R.drawable.aoyamamoema, "Salada com molho Gengibre"),
+            Prato(R.drawable.aoyamamoema, "Salada com molho Gengibre"),
+            Prato(R.drawable.aoyamamoema, "Salada com molho Gengibre"),
+            Prato(R.drawable.aoyamamoema, "Salada com molho Gengibre"),
+            Prato(R.drawable.aoyamamoema, "Salada com molho Gengibre"),
+            Prato(R.drawable.aoyamamoema, "Salada com molho Gengibre"),
+            Prato(R.drawable.aoyamamoema, "Salada com molho Gengibre"),
+            Prato(R.drawable.aoyamamoema, "Salada com molho Gengibre"),
+            Prato(R.drawable.aoyamamoema, "Salada com molho Gengibre"),
+            Prato(R.drawable.aoyamamoema, "Salada com molho Gengibre")
+        )
+
+        val pratosViewAdapter = PratosRecyclerviewAdapter(pratosDataSet)
+
+        pratosRecyclerView.apply {
+            layoutManager = pratosViewManager
+            adapter = pratosViewAdapter
         }
     }
 }
