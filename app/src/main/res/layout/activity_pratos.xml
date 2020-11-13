@@ -8,8 +8,53 @@
     tools:context=".PratosActivity">
 
     <FrameLayout
-        android:id="@+id/pratosContainer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/imgFotoRestaurante"
+            android:layout_width="wrap_content"
+            android:layout_height="275dp"
+            android:src="@drawable/aoyamamoema"
+            android:scaleType="centerCrop"
+            />
+        <Button
+            android:id="@+id/pratosBtnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/ic_baseline_keyboard_backspace_24"
+            android:background="@color/colorTransparent"
+            />
+        <TextView
+            android:id="@+id/txtNomeRestaurante"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:fontFamily="@font/roboto_medium"
+            android:paddingHorizontal="15dp"
+            android:text="Tony Roma's"
+            android:textColor="#fff"
+            android:textSize="28sp"
+            android:layout_marginBottom="5dp"/>
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pratos principais"
+            android:textSize="28sp"
+            android:fontFamily="@font/roboto_medium"
+            android:paddingHorizontal="15dp"
+            android:layout_marginTop="20dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/pratosRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/item_prato_recyclerview"/>
+    </LinearLayout>
 
 </LinearLayout>
