@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class PratosActivity : AppCompatActivity() {
+class PratosActivity : AppCompatActivity(), PratosRecyclerviewAdapter.ICardapioItemClick {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pratos)
@@ -29,23 +29,31 @@ class PratosActivity : AppCompatActivity() {
         val pratosRecyclerView = findViewById<RecyclerView>(R.id.pratosRecyclerView)
 
         val pratosDataSet = arrayListOf<Prato>(
-            Prato(R.drawable.aoyamamoema, "Salada com molho Gengibre"),
-            Prato(R.drawable.aoyamamoema, "Salada com molho Gengibre"),
-            Prato(R.drawable.aoyamamoema, "Salada com molho Gengibre"),
-            Prato(R.drawable.aoyamamoema, "Salada com molho Gengibre"),
-            Prato(R.drawable.aoyamamoema, "Salada com molho Gengibre"),
-            Prato(R.drawable.aoyamamoema, "Salada com molho Gengibre"),
-            Prato(R.drawable.aoyamamoema, "Salada com molho Gengibre"),
-            Prato(R.drawable.aoyamamoema, "Salada com molho Gengibre"),
-            Prato(R.drawable.aoyamamoema, "Salada com molho Gengibre"),
-            Prato(R.drawable.aoyamamoema, "Salada com molho Gengibre")
+            Prato(R.drawable.tonysroma, "Salada", "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusant doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis."),
+            Prato(R.drawable.tonysroma, "Salada com molho Gengibre", "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusant doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis."),
+            Prato(R.drawable.tonysroma, "Salada com molho Gengibre", "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusant doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis."),
+            Prato(R.drawable.tonysroma, "Salada com molho Gengibre", "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusant doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis."),
+            Prato(R.drawable.tonysroma, "Salada com molho Gengibre", "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusant doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis."),
+            Prato(R.drawable.tonysroma, "Salada com molho Gengibre", "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusant doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis."),
+            Prato(R.drawable.tonysroma, "Salada com molho Gengibre", "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusant doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis."),
+            Prato(R.drawable.tonysroma, "Salada com molho Gengibre", "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusant doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis."),
+            Prato(R.drawable.tonysroma, "Salada com molho Gengibre", "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusant doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis."),
+            Prato(R.drawable.tonysroma, "Salada com molho Gengibre", "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusant doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis.")
         )
 
-        val pratosViewAdapter = PratosRecyclerviewAdapter(pratosDataSet)
+        val pratosViewAdapter = PratosRecyclerviewAdapter(pratosDataSet, this)
 
         pratosRecyclerView.apply {
             layoutManager = pratosViewManager
             adapter = pratosViewAdapter
         }
+    }
+
+    override fun onCardapioClick(dataSetItem: Prato, position: Int) {
+        val intent = Intent(this, DetalheActivity::class.java)
+        intent.putExtra("PRATOFOTO", dataSetItem.foto)
+        intent.putExtra("PRATONOME", dataSetItem.nome)
+        intent.putExtra("PRATODESCRICAO", dataSetItem.descricao)
+        startActivity(intent)
     }
 }

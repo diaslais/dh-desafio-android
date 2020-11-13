@@ -8,7 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class PratosRecyclerviewAdapter (private val pratosDataSet: List<Prato>): RecyclerView.Adapter<PratosRecyclerviewAdapter.PratosViewHolder>() {
+class PratosRecyclerviewAdapter (private val pratosDataSet: List<Prato>, var clickListener: ICardapioItemClick): RecyclerView.Adapter<PratosRecyclerviewAdapter.PratosViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PratosViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_prato_recyclerview, parent, false)
@@ -18,16 +18,24 @@ class PratosRecyclerviewAdapter (private val pratosDataSet: List<Prato>): Recycl
     override fun getItemCount() = pratosDataSet.size
 
     override fun onBindViewHolder(holder: PratosViewHolder, position: Int) {
-        holder.bind(pratosDataSet[position])
+        holder.bind(pratosDataSet[position], clickListener)
     }
 
     class PratosViewHolder(view: View): RecyclerView.ViewHolder(view){
         private var fotoDetalhe= view.findViewById<ImageView>(R.id.imgDetalheCardapio)
         private var nomeDetalhe = view.findViewById<TextView>(R.id.txtNomeDetalheCardapio)
 
-        fun bind(prato: Prato){
+        fun bind(prato: Prato, action: ICardapioItemClick){
             fotoDetalhe.setImageResource(prato.foto)
             nomeDetalhe.text = prato.nome
+
+            itemView.setOnClickListener {
+                action.onCardapioClick(prato, adapterPosition)
+            }
         }
+    }
+
+    interface ICardapioItemClick {
+        fun onCardapioClick(dataSetItem: Prato, position: Int)
     }
 }
