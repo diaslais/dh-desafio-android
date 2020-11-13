@@ -1,5 +1,6 @@
 package com.laisd.desafio
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -30,6 +31,9 @@ class HomeActivity : AppCompatActivity(), HomeRecyclerviewAdapter. IRestaurantIt
     }
 
     override fun onRestaurantClick(dataSet: Restaurante, position: Int) {
-        Toast.makeText(this, dataSet.nome, Toast.LENGTH_LONG).show()
+        val intent = Intent(this, PratosActivity::class.java)
+        intent.putExtra("RESTAURANTEFOTO", dataSet.foto)
+        intent.putExtra("RESTAURANTENOME", dataSet.nome)
+        startActivity(intent)
     }
 }
